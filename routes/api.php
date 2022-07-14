@@ -31,7 +31,7 @@ Route::controller(DepartmentsController::class)->group(function () {
     Route::get('employee-by-departments', 'employeeByDepartments');
 });
 
-Route::controller(SalaryController::class)->group(function () {
+Route::controller(SalaryController::class)->middleware(['cors'])->group(function () {
     Route::get('salaries/{year}', 'salariesByYear');
     Route::get('salaries-five-year', 'index');
     Route::get('salaries-by-quarter/{quarter}', 'salariesByQuarter');
